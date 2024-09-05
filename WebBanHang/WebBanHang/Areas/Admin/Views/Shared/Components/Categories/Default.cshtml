@@ -1,0 +1,15 @@
+﻿@model IEnumerable<CategoryModel>
+
+@*     Lập chỗ nào thì copy chỗ đó *@
+
+@foreach(var item in Model)
+{
+    <!--category-productsr-->
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a asp-action="Index" asp-controller="Category" asp-route-Slug="@item.Slug">@item.Name</a>
+            </h4>
+        </div>
+    </div>
+}

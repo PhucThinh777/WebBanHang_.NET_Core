@@ -11,9 +11,11 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Order Code</th>
-@*             <th scope="col">Username</th>
-            <th scope="col">Order Date</th>
-            <th scope="col">Order Status</th> *@
+            <th scope="col">User Name</th>
+            <th scope="col">Product</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -22,23 +24,12 @@
             <tr>
                 <th scope="row">@item.Id</th>
                 <td>@item.OrderCode</td>
-@*                 <td>@item.UserName</td>
-                <td>@item.CreatedDate</td>
-                @* <td>@item.Status</td>
-                <td>
-                    @if (@item.Status == 1)
-                    {
-                        <span class="text text-success">Đơn hàng mới</span>
-                    }
-                    else
-                    {
-                        <span class="text text-danger">Đơn hàng thành công</span>
-                    }
-                </td> *@
+                <td>@item.UserName</td>
+                <td>@item.Product.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>               
                 <td>
                     <a asp-action="Index">Quay lại Đơn Hàng</a>
-                    @*<a class="btn btn-warning btn-sm" asp-action="ViewOrder" asp-controller="Order" asp-route-id="@item.OrderCode">View</a>
-                    <a class="btn btn-danger btn-sm confirmDeletion" asp-action="Delete" asp-controller="Order" asp-route-id="@item.Id">Delete</a> *@
                 </td>
             </tr>
         }

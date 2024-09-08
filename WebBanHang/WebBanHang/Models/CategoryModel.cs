@@ -5,7 +5,7 @@ namespace WebBanHang.Models
 	public class CategoryModel
 	{
 		[Key]
-		public int Id { get; set; }
+		public long Id { get; set; }
 		[Required(ErrorMessage ="Yêu cầu nhập tên danh mục")]
 		public string Name { get; set; }
 		[Required(ErrorMessage = "Yêu cầu nhập mô tả danh mục")]

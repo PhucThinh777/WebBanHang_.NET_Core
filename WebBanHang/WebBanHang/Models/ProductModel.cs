@@ -7,7 +7,7 @@ namespace WebBanHang.Models
 	public class ProductModel
 	{
 		[Key]
-		public int Id { get; set; }
+		public long Id { get; set; }
 		[Required(ErrorMessage = "Yêu cầu nhập tên sản phẩm")]
 		public string Name { get; set; }
 
@@ -23,10 +23,10 @@ namespace WebBanHang.Models
 		public string Image { get; set; }
 
 		[Required, Range(1,int.MaxValue, ErrorMessage ="Chọn 1 thương hiệu")]
-		public int BrandId { get; set; }
+		public long BrandId { get; set; }
         
 		[Required, Range(1, int.MaxValue, ErrorMessage = "Chọn 1 danh mục")]
-        public int CategoryId { get; set; }
+        public long CategoryId { get; set; }
 		public BrandModel Brand { get; set; }
 		public CategoryModel Category { get; set; }
 

@@ -40,6 +40,29 @@ builder.Services.Configure<IdentityOptions>(options =>
 
 var app = builder.Build();
 
+// Middleware để kiểm tra và chuyển hướng
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/Admin/Home")
+    {
+        context.Response.Redirect("/Home");
+        return;
+    }
+
+    await next();
+});
+
+app.Use(async (context, next) =>
+{
+    if (context.Request.Path == "/Home/Admin")
+    {
+        context.Response.Redirect("/Admin");
+        return;
+    }
+
+    await next();
+});
+
 app.UseStatusCodePagesWithRedirects("/Home/Error?statuscode={0}");
 app.UseSession();
 
@@ -50,6 +73,7 @@ if (!app.Environment.IsDevelopment())
 	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 	app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -79,6 +103,6 @@ app.MapControllerRoute(
 	pattern: "{controller=Home}/{action=Index}/{id?}");
 
 //Seeding Data
-var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
-SeedData.SeedingData(context);
+//var context = app.Services.CreateScope().ServiceProvider.GetRequiredService<DataContext>();
+//SeedData.SeedingData(context);
 app.Run();

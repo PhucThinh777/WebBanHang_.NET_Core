@@ -119,6 +119,10 @@
                                     </ul>
                                 </li> *@
                                 <li><a asp-action="Index" asp-controller="Cart">Cart</a></li>
+                                @if (User.Identity?.IsAuthenticated ?? false)
+                            {
+                                <li><a asp-action="Index" asp-controller="Admin">Admin</a></li>
+                            }
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </div>

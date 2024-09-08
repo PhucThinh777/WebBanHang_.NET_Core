@@ -44,7 +44,7 @@ namespace WebBanHang.Areas.Admin.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Edit(int Id)
+        public async Task<IActionResult> Edit(long Id)
         {
             CategoryModel category = await _dataContext.Categories.FindAsync(Id);
             return View(category);
@@ -144,7 +144,7 @@ namespace WebBanHang.Areas.Admin.Controllers
         #endregion
 
         #region Delete
-        public async Task<IActionResult> Delete(int Id)
+        public async Task<IActionResult> Delete(long Id)
         {
             CategoryModel category = await _dataContext.Categories.FindAsync(Id);
             _dataContext.Categories.Remove(category);

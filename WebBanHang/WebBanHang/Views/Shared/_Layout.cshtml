@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@* @model IEnumerable<SliderModel> *@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -8,6 +9,7 @@
     <title>Home | PT Shop</title>
     <link href="~/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.13.3/dist/sweetalert2.min.css" rel="stylesheet"
     <link href="~/css/prettyPhoto.css" rel="stylesheet">
     <link href="~/css/price-range.css" rel="stylesheet">
     <link href="~/css/animate.css" rel="stylesheet">
@@ -42,11 +44,7 @@
                     <div class="col-sm-6">
                         <div class="social-icons pull-right">
                             <ul class="nav navbar-nav">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a asp-action="Contact" asp-controller="Home"><i class="fa fa-map"></i>Thông tin liên hệ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -70,9 +68,7 @@
                                 @if (User.Identity?.IsAuthenticated ?? false)
                                 {
                                     <li><a asp-controller="Account" asp-action="Logout"><i class="fa fa-lock"></i>Hi, @User.Identity.Name, Logout</a></li>
-                                    <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-                                    <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-                                    <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                    <li><a asp-controller="Admin" asp-action="Index"><i class="fa fa-user"></i> Account</a></li>
                                 }
                                 else
                                 {
@@ -100,82 +96,31 @@
                         </div>
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a asp-controller="Home" class="active">Home</a></li>
-                                <li class="dropdown">
-                                    <a asp-controller="Product">Shop<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a asp-action="Index" asp-controller="Category">Categories</a></li>
-                                        <li><a asp-action="Index" asp-controller="Product">Product Details</a></li>
-                                        <li><a asp-action="Index" asp-controller="Checkout">Checkout</a></li>
-                                        <li><a asp-action="Index" asp-controller="Cart">Cart</a></li>
-                                        <li><a asp-action="Login" asp-controller="Account">Login</a></li>
-                                    </ul>
-                                </li>
+                                <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
                                 @* <li class="dropdown">
-                                    <a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                    <ul role="menu" class="sub-menu">
-                                        <li><a href="blog.html">Blog List</a></li>
-                                        <li><a href="blog-single.html">Blog Single</a></li>
-                                    </ul>
+                                <a href="#">Blog<i class="fa fa-angle-down"></i></a>
+                                <ul role="menu" class="sub-menu">
+                                <li><a href="blog.html">Blog List</a></li>
+                                <li><a href="blog-single.html">Blog Single</a></li>
+                                </ul>
                                 </li> *@
                                 <li><a asp-action="Index" asp-controller="Cart">Cart</a></li>
-                                @if (User.Identity?.IsAuthenticated ?? false)
-                            {
-                                <li><a asp-action="Index" asp-controller="Admin">Admin</a></li>
-                            }
-                                <li><a href="contact-us.html">Contact</a></li>
+                                <li><a asp-action="Contact" asp-controller="Home">Contact</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <form asp-controller="Product" asp-action="Search" method="post">
-                        <div class="search_box pull-right">
-                            <input type="text" placeholder="Search" name="searchTerm"/>
-                            <button class="btn btn-warning" type="submit">Search</button>
-                        </div>
+                            <div class="search_box pull-right">
+                                <input type="text" placeholder="Search" name="searchTerm" />
+                                <button class="btn btn-warning" type="submit">Search</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div><!--/header-bottom-->
     </header><!--/header-->
-
-    <section id="slider">
-        <!--slider-->
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div id="slider-carousel" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#slider-carousel" data-slide-to="1"></li>
-                            <li data-target="#slider-carousel" data-slide-to="2"></li>
-                        </ol>
-
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                <div class="col-sm-12">
-                                    <img src="https://animekeyboard.b-cdn.net/wp-content/uploads/2022/04/Anime-Keyboard-Web-Banner-1920x950px.jpg" style="width: 100%;" />
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="https://storage.pixteller.com/designs/designs-images/2020-12-21/05/laptop-new-arrival-sales-banner-1-5fe0bbf152956.png" style="width: 100%;" />
-                            </div>
-                        </div>
-
-
-                        <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section><!--/slider-->
 
     <section>
         <div class="container">
@@ -273,13 +218,22 @@
     </footer><!--/Footer-->
 
 
-
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v20.0" nonce="puk4Y7tb"></script>
     <script src="~/js/jquery.js"></script>
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/js/jquery.scrollUp.min.js"></script>
     <script src="~/js/price-range.js"></script>
     <script src="~/js/jquery.prettyPhoto.js"></script>
     <script src="~/js/main.js"></script>
-    @await RenderSectionAsync("Stripts", required: false)
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.13.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+        $(function () {
+            var message = '@TempData["success"]';
+            if (message != '')
+                Swal.fire(message);
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

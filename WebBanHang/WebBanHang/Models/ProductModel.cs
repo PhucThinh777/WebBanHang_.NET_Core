@@ -4,7 +4,7 @@ using WebBanHang.Repository.Validation;
 
 namespace WebBanHang.Models
 {
-	public class ProductModel
+    public class ProductModel
 	{
 		[Key]
 		public long Id { get; set; }
@@ -29,6 +29,7 @@ namespace WebBanHang.Models
         public long CategoryId { get; set; }
 		public BrandModel Brand { get; set; }
 		public CategoryModel Category { get; set; }
+		public RatingModel Ratings { get; set; }
 
 		[NotMapped]
         //[Required(ErrorMessage = "Yêu cầu chọn ảnh")]

@@ -20,6 +20,9 @@ namespace WebBanHang.Controllers
         public IActionResult Index()
         {
             var products = _dataContext.Products.Include("Category").Include("Brand").ToList();
+            var sliders = _dataContext.Sliders.ToList();
+            ViewBag.Sliders = sliders;
+
             return View(products);
         }
 
@@ -40,5 +43,11 @@ namespace WebBanHang.Controllers
                 return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
             } 
         }
+
+        public async Task<IActionResult> Contact()
+        {
+			var contact = await _dataContext.Contacts.FirstAsync();
+			return View(contact);
+		}
     }
 }

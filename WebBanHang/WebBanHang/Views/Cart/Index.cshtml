@@ -17,8 +17,8 @@
             <table class="table table-condensed">
                 <thead>
                     <tr class="cart_menu">
-                        <td class="image">Item</td>
-                        <td class="description"></td>
+                        <td class="image">Image</td>
+                        <td class="name">Name</td>
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
@@ -34,7 +34,7 @@
                                 <td class="cart_product">
                                     <img width="150px" height="150px" src="~/media/products/@item.Image" alt="">
                                 </td>
-                                <td class="cart_description">
+                                <td class="cart_name">
                                     <h4><a href="">@item.ProductName</a></h4>
                                 </td>
                                 <td class="cart_price">
@@ -49,9 +49,9 @@
                                 <td class="cart_total">
                                     <p class="cart_total_price">@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString()</p>
                                 </td>
-                                <td class="cart_delete">
+@*                                 <td class="cart_delete">
                                     <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                </td>
+                                </td> *@
                             </tr>
                         }
                         <tr rowspan="5">

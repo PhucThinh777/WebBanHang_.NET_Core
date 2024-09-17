@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using WebBanHang.Areas.Admin.Repository;
 using WebBanHang.Models;
 using WebBanHang.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Add Email Sender
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

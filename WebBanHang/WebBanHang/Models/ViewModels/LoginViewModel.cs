@@ -12,5 +12,6 @@ namespace WebBanHang.Models.ViewModels
         [DataType(DataType.Password), Required(ErrorMessage = "Hãy nhập Password")]
         public string Password { get; set; }
         public string ReturnUrl { get; set; }
+
     }
 }

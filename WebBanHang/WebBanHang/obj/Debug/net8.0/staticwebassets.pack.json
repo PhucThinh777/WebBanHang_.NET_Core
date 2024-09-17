@@ -349,6 +349,10 @@
       "PackagePath": "staticwebassets\\login.html"
     },
     {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\banners\\banner.png",
+      "PackagePath": "staticwebassets\\media\\banners\\banner.png"
+    },
+    {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\banners\\banner1.jpg",
       "PackagePath": "staticwebassets\\media\\banners\\banner1.jpg"
     },
@@ -363,6 +367,10 @@
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\banners\\banner4.jpg",
       "PackagePath": "staticwebassets\\media\\banners\\banner4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\logo.PNG",
+      "PackagePath": "staticwebassets\\media\\logos\\logo.PNG"
     },
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\060a45c9-b607-4778-bd0d-eca97beb7812.jpg",

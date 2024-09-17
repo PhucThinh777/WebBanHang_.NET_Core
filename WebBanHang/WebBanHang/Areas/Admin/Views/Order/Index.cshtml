@@ -6,7 +6,7 @@
 
 <h4>Danh sách đơn hàng</h4>
 @* <a class="btn btn-success btn-sm" asp-action="Create" asp-controller="Category">Add Category</a> *@
-<table class="table">
+<table class="table" id="myTable">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -33,7 +33,7 @@
                     }
                     else
                     {
-                        <span class="text text-danger">Đơn hàng thành công</span>
+                        <span class="text text-danger">Đã xử lý</span>
                     }
                 </td>
                 <td>

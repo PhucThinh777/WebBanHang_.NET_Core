@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SliderModel>
+@{
+    ViewData["Title"] = "Slider List";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Slider List</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Slider</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>
+                    @* Slidert *@
+                    @{
+                        string imageListSlider = @item.Name;
+                        var anhSlider = imageListSlider.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    }
+                    @foreach (var slider in anhSlider)
+                    {
+                        <img width="100px" height="50px" src="~/media/banners/@slider.Trim()" alt="Slider">
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-warning btn-sm" asp-action="Edit" asp-controller="Slider" asp-route-id="@item.Id">Edit</a> 
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

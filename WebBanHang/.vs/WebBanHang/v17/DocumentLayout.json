@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\repository\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\repository\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\repository\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\repository\\iemailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\views\\order\\vieworder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\views\\order\\vieworder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\views\\shared\\_sliderpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\views\\shared\\_sliderpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\views\\contact\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\views\\home\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\views\\home\\notfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,41 +46,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IEmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\IEmailSender.cs",
-              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Repository\\IEmailSender.cs",
-              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\IEmailSender.cs",
-              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Repository\\IEmailSender.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T16:40:02.943Z",
+              "DocumentIndex": 2,
+              "Title": "_SliderPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Shared\\_SliderPartial.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Views\\Shared\\_SliderPartial.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Shared\\_SliderPartial.cshtml",
+              "RelativeToolTip": "WebBanHang\\Views\\Shared\\_SliderPartial.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-17T11:33:38.25Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAoAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-08T16:40:01.616Z",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebBanHang\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAI4AAAAAAAAAAAAkwMsAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-17T11:16:59.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ViewOrder.cshtml",
-              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Order\\ViewOrder.cshtml",
-              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Views\\Order\\ViewOrder.cshtml",
-              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Order\\ViewOrder.cshtml",
-              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Views\\Order\\ViewOrder.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAA/AAAA",
+              "DocumentIndex": 5,
+              "Title": "NotFound.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Home\\NotFound.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Views\\Home\\NotFound.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Home\\NotFound.cshtml",
+              "RelativeToolTip": "WebBanHang\\Views\\Home\\NotFound.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-08T16:32:17.087Z",
+              "WhenOpened": "2024-09-17T11:07:35.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "WebBanHang\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-17T10:57:13.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Views\\Contact\\Index.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-17T10:56:52.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebBanHang\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebBanHang\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowDAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T10:56:27.417Z",
               "EditorCaption": ""
             }
           ]

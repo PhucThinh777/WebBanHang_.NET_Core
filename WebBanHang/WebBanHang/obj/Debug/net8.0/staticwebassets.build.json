@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jS/xirN48+PkoRbNETbnhajHgUl6s8QxqQZsJIIeYBY=",
+  "Hash": "g5x3Qu9weBvYqrU68EOa6ThjYLRCyhnsOpoweYToSJU=",
   "Source": "WebBanHang",
   "BasePath": "_content/WebBanHang",
   "Mode": "Default",
@@ -1689,6 +1689,25 @@
       "OriginalItemSpec": "wwwroot\\login.html"
     },
     {
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\banners\\banner.png",
+      "SourceId": "WebBanHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
+      "BasePath": "_content/WebBanHang",
+      "RelativePath": "media/banners/banner.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\banners\\banner.png"
+    },
+    {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\banners\\banner1.jpg",
       "SourceId": "WebBanHang",
       "SourceType": "Discovered",
@@ -1763,6 +1782,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\banners\\banner4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\logo.PNG",
+      "SourceId": "WebBanHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
+      "BasePath": "_content/WebBanHang",
+      "RelativePath": "media/logos/logo.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\logos\\logo.PNG"
     },
     {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\060a45c9-b607-4778-bd0d-eca97beb7812.jpg",

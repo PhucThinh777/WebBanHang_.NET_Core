@@ -1,0 +1,37 @@
+﻿@model WebBanHang.Models.SliderModel
+@{
+    ViewData["Title"] = "Edit Slider";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Brand</h1>
+<div class="col-md-9">
+    <form asp-action="Edit" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <!-- Slider -->
+        <div class="form-group">
+            <label for="Name">Slider</label>
+            <input asp-for="UploadSlider" type="file" class="form-control" multiple />
+            <span asp-validation-for="UploadSlider" class="text-danger"></span>
+            @* Slider *@
+            @{
+                string imageListSlider = @Model.Name;
+                var anhSlider = imageListSlider.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            }
+            @foreach (var slider in anhSlider)
+            {
+                <img width="100px" height="50px" src="~/media/banners/@slider.Trim()" alt="Slider">
+            }
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Update</button>
+        </div>
+    </form>
+
+    <a asp-action="Index">Back to List Slider</a>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

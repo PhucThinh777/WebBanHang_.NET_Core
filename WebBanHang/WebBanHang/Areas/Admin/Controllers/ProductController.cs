@@ -128,7 +128,8 @@ namespace WebBanHang.Areas.Admin.Controllers
                     product.Slug = product.Name.Replace(" ", "-").ToLower();
 
                     // Kiểm tra trùng lặp Slug
-                    var existingProduct = await _dataContext.Products.FirstOrDefaultAsync(p => p.Slug == product.Slug);
+                    var existingProduct = await _dataContext.Products
+                        .FirstOrDefaultAsync(p => p.Slug == product.Slug && p.Id != product.Id);
                     if (existingProduct != null)
                     {
                         ModelState.AddModelError("", "Sản phẩm đã có trong database");

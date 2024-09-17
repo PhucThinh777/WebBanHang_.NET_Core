@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using WebBanHang.Areas.Admin.Repository;
 using WebBanHang.Models;
 using WebBanHang.Repository;
 
@@ -8,10 +9,12 @@ namespace WebBanHang.Controllers
 	public class CheckoutController : Controller
 	{
 		private readonly DataContext _dataContext;
-		
-		public CheckoutController(DataContext context)
+		private readonly IEmailSender _emailSender;
+
+        public CheckoutController(IEmailSender emailSender, DataContext context)
 		{
 			_dataContext = context;
+			_emailSender = emailSender;
 		}
         public async Task<IActionResult> Checkout()
 		{
@@ -43,7 +46,16 @@ namespace WebBanHang.Controllers
 					_dataContext.SaveChanges();
 				}
 				HttpContext.Session.Remove("Cart");
-				TempData["success"] = "Checkout thành công vui lòng chờ duyệt đơn hàng";
+                //Gửi Email
+                var receiver = userEmail;
+                var subject = "Đặt hàng thành công";
+                var message = "Đặt hàng thành công, Cảm ơn bạn đã sử dụng dịch vụ bên chúng tôi.\n" +
+							  "Thông tin chi tiết: \n" + 
+							  "Tài khoản: " + userEmail + "\n" + 
+							  "Mã đơn hàng: " + ordercode;
+
+                await _emailSender.SendEmailAsync(receiver, subject, message);
+                TempData["success"] = "Checkout thành công vui lòng chờ duyệt đơn hàng";
 				return RedirectToAction("Index", "Cart");
             }
             return View();

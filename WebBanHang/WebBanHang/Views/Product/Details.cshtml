@@ -1,18 +1,17 @@
-﻿@model WebBanHang.Models.ProductModel
+﻿@model WebBanHang.Models.ViewModels.ProductDetailsViewModel
+
 <div class="row">
     <div class="col-sm-3">
         @Html.Partial("_Sidebar")
     </div>
     <div class="col-sm-9 padding-right">
         <div class="product-details">
-            <!--product-details-->
             <div class="col-sm-5">
                 <div class="view-product">
-                    <img src="~/media/products/@Model.Image" alt="" />
+                    <img src="~/media/products/@Model.ProductDetails.Image" alt="@Model.ProductDetails.Name" />
                     <h3>ZOOM</h3>
                 </div>
                 <div id="similar-product" class="carousel slide" data-ride="carousel">
-
                     <!-- Controls -->
                     <a class="left item-control" href="#similar-product" data-slide="prev">
                         <i class="fa fa-angle-left"></i>
@@ -21,72 +20,84 @@
                         <i class="fa fa-angle-right"></i>
                     </a>
                 </div>
-
             </div>
             <div class="col-sm-7">
                 <div class="product-information">
-                    <!--/product-information-->
-                    @* <img src="~/images/@Model.Image" class="newarrival" alt="" /> *@
-                    <h2>@Model.Name</h2>
-                    @* 					<img src="~/images/@Model.Image" alt="" /> *@
+                    <h2>@Model.ProductDetails.Name</h2>
                     <span>
-                        <span> $@Model.Price</span>
+                        <span>@Model.ProductDetails.Price.ToString("#,##0 VNĐ")</span>
                         <label>Quantity:</label>
-                        <input type="text" value="3" />
-                        <button type="button" class="btn btn-fefault cart">
+                        <input type="text" value="1" />
+                        <button type="button" class="btn btn-default cart">
                             <i class="fa fa-shopping-cart"></i>
                             Add to cart
                         </button>
                     </span>
-                    <p><b>Danh mục:</b> @Model.Category.Name</p>
-                    <p><b>Thương hiệu:</b> @Model.Category.Name</p>
-                    @* <a href=""><img src="~/images/@Model.Image" class="share img-responsive" alt="" /></a> *@
-                </div><!--/product-information-->
+                    <p><b>Danh mục:</b> @Model.ProductDetails.Category.Name</p>
+                    <p><b>Thương hiệu:</b> @Model.ProductDetails.Brand?.Name</p>
+                </div>
             </div>
-        </div><!--/product-details-->
+        </div>
 
         <div class="category-tab shop-details-tab">
-            <!--category-tab-->
             <div class="col-sm-12">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+                    <li><a href="#details" data-toggle="tab">Details</a></li>
+                    <li class="active"><a href="#reviews" data-toggle="tab">Reviews</a></li>
                 </ul>
             </div>
             <div class="tab-content">
-                <div class="tab-pane fade active in" id="details">
-                    <div class="col-sm-3">
-                        <div class="product-image-wrapper">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <p>@Model.Description</p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="tab-pane fade" id="details">
+                    <div class="col-sm-12">
+                        <p>@Model.ProductDetails.Description</p>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade active in" id="reviews">
+                    <div class="col-sm-12">
+                        <form asp-action="CommentProduct" asp-controller="Product" method="post">
+                            <input type="hidden" asp-for="ProductDetails.Id" name="ProductId" />
+                            <input type="hidden" asp-for="Star" value="4" />
+                            <span>
+                                <input asp-for="Name" type="text" placeholder="Your Name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                                <input asp-for="Email" type="email" placeholder="Email Address" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </span>
+                            <textarea asp-for="Comment" placeholder="Your Comment"></textarea>
+                            <span asp-validation-for="Comment" class="text-danger"></span>
+                            <b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
+                            @if (User.Identity?.IsAuthenticated ?? false)
+                            {
+                                <button type="submit" class="btn btn-default pull-right">Submit</button>
+                            }
+                            else
+                            {
+                            <h3>Đăng nhập tài khoản để comment</h3>
+                                <a asp-action="Login" asp-controller="Account">Đăng nhập ngay</a>
+                            }
+                        </form>
                     </div>
                 </div>
             </div>
-        </div><!--/category-tab-->
+        </div>
 
         <div class="recommended_items">
-            <!--recommended_items-->
             <h2 class="title text-center">Related Products</h2>
-
             <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="item active">
-                        @foreach (var relatedProduct in ViewBag.RelatedProducts as IEnumerable<ProductModel>)
+                        @foreach (var relatedProduct in ViewBag.RelatedProducts as IEnumerable<WebBanHang.Models.ProductModel>)
                         {
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
-
                                         <div class="productinfo text-center">
-
-                                            <img height="270px" width="200" src="~/media/products/@relatedProduct.Image" alt="" />
-                                            <a asp-action="Detail" asp-controller="Product" asp-route-Id="@relatedProduct.Id">
-                                                <h2>@relatedProduct.Price</h2>
+                                            <img height="270px" width="200" src="~/media/products/@relatedProduct.Image" alt="@relatedProduct.Name" />
+                                            <a asp-action="Details" asp-controller="Product" asp-route-id="@relatedProduct.Id">
+                                                <h2>@relatedProduct.Price.ToString("#,##0 VNĐ")</h2>
                                                 <p>Danh mục: @relatedProduct.Category.Name</p>
-                                                <p>Thương hiệu: @relatedProduct.Brand.Name</p>
+                                                <p>Thương hiệu: @relatedProduct.Brand?.Name</p>
                                             </a>
                                         </div>
                                     </div>
@@ -102,7 +113,6 @@
                     <i class="fa fa-angle-right"></i>
                 </a>
             </div>
-        </div><!--/recommended_items-->
-
+        </div>
     </div>
 </div>

@@ -23,5 +23,33 @@ namespace WebBanHang.Areas.Admin.Controllers
 			var DetailsOrder = await _dataContext.OrderDetails.Include(od => od.Product).Where(od => od.OrderCode == ordercode).ToListAsync();
 			return View(DetailsOrder);
 		}
-	}
+		[HttpPost]
+		[Route("UpdateOrder")]
+		public async Task<IActionResult> UpdateOrder(string ordercode, int status)
+		{
+			var order = await _dataContext.Orders.FirstOrDefaultAsync(o => o.OrderCode == ordercode);
+
+			if (order == null)
+			{
+				return NotFound();
+			}
+
+			order.Status = status;
+
+			try
+			{
+				await _dataContext.SaveChangesAsync();
+				return Ok(new
+				{
+					success = true,
+					message = "Order status updated successfully"
+				});
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, "Error updating");
+			}
+		}
+
+    }
 }

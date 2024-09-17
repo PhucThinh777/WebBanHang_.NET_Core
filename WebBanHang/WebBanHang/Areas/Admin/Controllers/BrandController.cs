@@ -6,20 +6,20 @@ using WebBanHang.Repository;
 
 namespace WebBanHang.Areas.Admin.Controllers
 {
-        [Area("Admin")]
-        [Authorize(Roles ="Admin, Master")]
+    [Area("Admin")]
+    [Authorize(Roles = "Admin, Master")]
 
     public class BrandController : Controller
-	{
-		private readonly DataContext _dataContext;
-		public BrandController(DataContext context)
-		{
-			_dataContext = context;
-		}
+    {
+        private readonly DataContext _dataContext;
+        public BrandController(DataContext context)
+        {
+            _dataContext = context;
+        }
 
         #region Create - Edit - Index
-        public async Task<IActionResult> Index(int pg =1)
-		{
+        public async Task<IActionResult> Index(int pg = 1)
+        {
             //return View(await _dataContext.Brands.OrderByDescending(p => p.Id).ToListAsync());
             List<BrandModel> brand = _dataContext.Brands.ToList();
 

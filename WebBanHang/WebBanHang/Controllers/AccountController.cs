@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
+using WebBanHang.Areas.Admin.Repository;
 using WebBanHang.Models;
 using WebBanHang.Models.ViewModels;
 
@@ -9,11 +11,13 @@ namespace WebBanHang.Controllers
     {
         private UserManager<AppUserModel> _userManager;
         private SignInManager<AppUserModel> _signInManager;
+        private readonly IEmailSender _emailSender;
 
-        public AccountController(SignInManager<AppUserModel> signInManager, UserManager<AppUserModel> userManager)
+        public AccountController(IEmailSender emailSender, SignInManager<AppUserModel> signInManager, UserManager<AppUserModel> userManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _emailSender = emailSender;
         }
 
         #region Login
@@ -22,7 +26,7 @@ namespace WebBanHang.Controllers
             return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel loginVM)
+        public async Task<IActionResult> Login(LoginViewModel loginVM, AppUserModel appUserModel)
         {
             if (ModelState.IsValid)
             {
@@ -30,7 +34,13 @@ namespace WebBanHang.Controllers
                     .PasswordSignInAsync(loginVM.Username, loginVM.Password, false, false);
                 if (result.Succeeded)
                 {
-                    return Redirect(loginVM.ReturnUrl ?? "/");
+                   // Gửi Email
+                   //var receiver = ""; 
+                   //var subject = "Đăng nhập";
+                   //var message = "Bạn vừa đăng nhập thành công.";
+
+                   //await _emailSender.SendEmailAsync(receiver, subject, message);
+                        return Redirect(loginVM.ReturnUrl ?? "/");
                 }
                 ModelState.AddModelError("", "Username hoặc Password bị sai");
             }

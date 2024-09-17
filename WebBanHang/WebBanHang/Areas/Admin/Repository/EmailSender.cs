@@ -11,11 +11,11 @@ namespace WebBanHang.Areas.Admin.Repository
             {
                 EnableSsl = true, //bật bảo mật
                 UseDefaultCredentials = false,
-                Credentials = new NetworkCredential("demologin979@gmail.com", "qtuixzjxgpnetvrq")
+                Credentials = new NetworkCredential("phucthinh644@gmail.com", "xkjiqwvpvtmsrxsc")
             };
 
             return client.SendMailAsync(
-                new MailMessage(from: "demologin979@gmail.com",
+                new MailMessage(from: "phucthinh644@gmail.com",
                                 to: email,
                                 subject,
                                 message

@@ -6,15 +6,16 @@
 
 <h4>User List</h4>
 <a class="btn btn-success btn-sm" asp-action="Create" asp-controller="User">Add User</a>
-<table class="table">
+<table class="table" id="myTable">
     <thead>
         <tr>
             <th scope="col">Id</th>
             <th scope="col">UserName</th>
             <th scope="col">Email</th>
             <th scope="col">PasswordHash</th>
-            <th scope="col">Phone</th>
+@*             <th scope="col">Phone</th> *@
             <th scope="col">Role</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -25,7 +26,7 @@
                 <td>@usersWithRoles.User.UserName</td>
                 <td>@usersWithRoles.User.Email</td>
                 <td>@usersWithRoles.User.PasswordHash</td>
-                <td>@usersWithRoles.User.PhoneNumber</td>
+@*                 <td>@usersWithRoles.User.PhoneNumber</td> *@
                 <td>@usersWithRoles.RoleName</td>
                 <td>
                     <a class="btn btn-warning btn-sm" asp-action="Edit" asp-controller="User" asp-route-id="@usersWithRoles.User.Id">Edit</a>

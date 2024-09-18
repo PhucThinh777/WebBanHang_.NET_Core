@@ -42,6 +42,13 @@ builder.Services.Configure<IdentityOptions>(options =>
 	options.User.RequireUniqueEmail = true;
 });
 
+// đăng ký PaypalClient dạng Singleton() - chỉ có 1 instance duy nhất trong toàn ứng dụng
+builder.Services.AddSingleton(x => new PaypalClient(
+        builder.Configuration["PaypalOptions:AppId"],
+        builder.Configuration["PaypalOptions:AppSecret"],
+        builder.Configuration["PaypalOptions:Mode"]
+));
+
 var app = builder.Build();
 
 // Middleware để kiểm tra và chuyển hướng

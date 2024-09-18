@@ -24,7 +24,13 @@
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
                         <button class="btn btn-default">Login</button>
+
+                        <div style="margin-top:20px">
                         <a asp-action="Create" asp-controller="Account">Tạo tài khoản mới</a>
+                        </div>
+                        <div style="margin-top:20px">
+                        <a asp-action="ForgotPassword" asp-controller="Account">Quên mật khẩu ?</a>
+                        </div>
                     </form>
                 </div><!--/login form-->
             </div>

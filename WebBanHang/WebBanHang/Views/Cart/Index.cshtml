@@ -22,6 +22,7 @@
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
+                        <td class="action">Action</td>
                         <td></td>
                     </tr>
                 </thead>
@@ -49,17 +50,20 @@
                                 <td class="cart_total">
                                     <p class="cart_total_price">@Model.CartItems.Where(x => x.ProductId == item.ProductId).Sum(x => x.Quantity * x.Price).ToString()</p>
                                 </td>
-@*                                 <td class="cart_delete">
-                                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                </td> *@
                             </tr>
                         }
                         <tr rowspan="5">
-                            <td colspan="6"><p>Grand Total: @Model.GrandTotal.ToString()</p></td>
+                            <td colspan="5"><p>Grand Total: @Model.GrandTotal.ToString()</p></td>
                             <td><a class="btn btn-danger btn-sm" asp-controller="Cart" asp-action="Clear"> Clear </a></td>
+
+                        </tr>
+                        
+                        <tr>
                             @if (User.Identity?.IsAuthenticated ?? false)
                             {
-                                <td><a class="btn btn-primary btn-sm" asp-controller="Checkout" asp-action="Checkout"> Checkout </a></td>
+                                <td><h4 style="color: red">Chọn hình thức thanh toán:</h4></td>
+                                <td><a style="color: limegreen; font-size: 16px" asp-controller="Cart" asp-action="IndexCOD"> Thanh toán khi nhận hàng </a></td>
+                                <td><a style="color: limegreen; font-size: 16px" asp-controller="Cart" asp-action="IndexPaypal"> Thanh toán bằng Paypal </a></td>
                             }
                         </tr>
                     }
@@ -69,8 +73,45 @@
                             <td colspan="5"><h4>Giỏ hàng trống!</h4></td>
                         </tr>
                     }
+
                 </tbody>
             </table>
         </div>
     </div>
 </section> <!--/#cart_items-->
+@section Scripts {
+    <script src="https://www.paypal.com/sdk/js?client-id=@ViewBag.PaypalClientdId"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                layout: 'vertical',
+                color: 'silver',
+                tagline: 'false'
+            },
+            createOrder: (data, actions) => {
+                return fetch("/Cart/create-paypal-order", {
+                    method: "post",
+                }).then((response) => {
+                    if (!response.ok) {
+                        return response.json().then(error => { throw error; });
+                    }
+
+                    return response.json();
+                }).then((order) => order.id)
+                    .catch(error => alert(error.message));
+            },
+            onApprove: (data, actions) => {
+                return fetch(`/Cart/capture-paypal-order?orderId=${data.orderID}`, {
+                    method: "post",
+                }).then((response) => {
+                    if (!response.ok) {
+                        return response.json().then(error => { throw error; });
+                    }
+
+                    // Đổi địa chỉ tới action thông báo thành công
+                    window.location.href = "/Cart/PaymentSuccess";
+                }).catch(error => alert(error.message));
+            }
+        }).render('#paypal-button-container');
+    </script>
+}

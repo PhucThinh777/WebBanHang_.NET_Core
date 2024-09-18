@@ -369,8 +369,20 @@
       "PackagePath": "staticwebassets\\media\\banners\\banner4.jpg"
     },
     {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\checkoutsuccess.png",
+      "PackagePath": "staticwebassets\\media\\logos\\checkoutsuccess.png"
+    },
+    {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\logo.PNG",
       "PackagePath": "staticwebassets\\media\\logos\\logo.PNG"
+    },
+    {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\paymentsuccess.png",
+      "PackagePath": "staticwebassets\\media\\logos\\paymentsuccess.png"
+    },
+    {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\logos\\success.avif",
+      "PackagePath": "staticwebassets\\media\\logos\\success.avif"
     },
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\060a45c9-b607-4778-bd0d-eca97beb7812.jpg",
@@ -423,6 +435,10 @@
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg",
       "PackagePath": "staticwebassets\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg"
     },
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\fe13054f-3cc9-4154-9dfd-434c7f988b5d.jpg",

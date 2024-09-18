@@ -20,7 +20,7 @@ namespace WebBanHang.Areas.Admin.Controllers
 		}
 		public async Task<IActionResult> ViewOrder(string ordercode)
 		{
-			var DetailsOrder = await _dataContext.OrderDetails.Include(od => od.Product).Where(od => od.OrderCode == ordercode).ToListAsync();
+			var DetailsOrder = await _dataContext.OrderDetails.Include(od => od.Product).Include(od => od.Payment).Where(od => od.OrderCode == ordercode).ToListAsync();
 			return View(DetailsOrder);
 		}
 		[HttpPost]

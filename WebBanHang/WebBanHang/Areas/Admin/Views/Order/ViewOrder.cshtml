@@ -17,6 +17,10 @@
             <th scope="col">Product</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
+            <th scope="col">Address</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Payment</th>
             <th scope="col">Subtotal</th>
             <th scope="col">Action</th>
         </tr>
@@ -34,6 +38,10 @@
                 <td>@item.Product.Name</td>
                 <td>@item.Price.ToString("#,##0 VNĐ")</td>
                 <td>@item.Quantity</td>
+                <td>@item.Address</td>
+                <td>@item.FullName</td>
+                <td>@item.Phone</td>
+                <td>@item.Payment.Name</td>
                 <td>@subtotal.ToString("#,##0 VNĐ")</td>
                 <td>
                     <a asp-action="Index">Quay lại Đơn Hàng</a>
@@ -42,6 +50,10 @@
         }
         <tr>
             <td>Total:</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>

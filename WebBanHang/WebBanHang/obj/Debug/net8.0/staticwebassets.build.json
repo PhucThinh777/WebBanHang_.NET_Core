@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UMUlUvhwd1hoCFq6NvCd6ihZFatKew5B4hom8gP4of0=",
+  "Hash": "gWKhGewFag6ITJf5VU3+BzOGkgesdT3cLb2D1/rs1kE=",
   "Source": "WebBanHang",
   "BasePath": "_content/WebBanHang",
   "Mode": "Default",
@@ -1955,6 +1955,25 @@
       "OriginalItemSpec": "wwwroot\\media\\products\\35d22868-41ea-4117-88c6-0d3e389e4630.png"
     },
     {
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\37a9c11d-17c4-455b-bfd5-6e117773516c.jpg",
+      "SourceId": "WebBanHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
+      "BasePath": "_content/WebBanHang",
+      "RelativePath": "media/products/37a9c11d-17c4-455b-bfd5-6e117773516c.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\37a9c11d-17c4-455b-bfd5-6e117773516c.jpg"
+    },
+    {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\51b6a856-ecbf-4487-8607-7c7f437139ad.jpg",
       "SourceId": "WebBanHang",
       "SourceType": "Discovered",
@@ -2069,6 +2088,25 @@
       "OriginalItemSpec": "wwwroot\\media\\products\\a52b7cb8-185b-4ac2-9567-493be1b6f342.jpg"
     },
     {
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\b87a20f0-9e0d-4cab-ba85-66771e69dae9.jpg",
+      "SourceId": "WebBanHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
+      "BasePath": "_content/WebBanHang",
+      "RelativePath": "media/products/b87a20f0-9e0d-4cab-ba85-66771e69dae9.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\b87a20f0-9e0d-4cab-ba85-66771e69dae9.jpg"
+    },
+    {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\bb20653e-2fa3-4c9d-bdda-19de7c8a38d7.jpg",
       "SourceId": "WebBanHang",
       "SourceType": "Discovered",
@@ -2088,12 +2126,12 @@
       "OriginalItemSpec": "wwwroot\\media\\products\\bb20653e-2fa3-4c9d-bdda-19de7c8a38d7.jpg"
     },
     {
-      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg",
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\ec79ac5e-a184-453b-9816-d1a6d2bddfa5.jpg",
       "SourceId": "WebBanHang",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
       "BasePath": "_content/WebBanHang",
-      "RelativePath": "media/products/e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg",
+      "RelativePath": "media/products/ec79ac5e-a184-453b-9816-d1a6d2bddfa5.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2104,26 +2142,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg",
-      "SourceId": "WebBanHang",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
-      "BasePath": "_content/WebBanHang",
-      "RelativePath": "media/products/eb1b072f-d417-4e03-9036-00f97ee94080.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg"
+      "OriginalItemSpec": "wwwroot\\media\\products\\ec79ac5e-a184-453b-9816-d1a6d2bddfa5.jpg"
     },
     {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\fe13054f-3cc9-4154-9dfd-434c7f988b5d.jpg",
@@ -2162,6 +2181,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\products\\notfound.png"
+    },
+    {
+      "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\text.jpg",
+      "SourceId": "WebBanHang",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\",
+      "BasePath": "_content/WebBanHang",
+      "RelativePath": "media/products/text.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\products\\text.jpg"
     },
     {
       "Identity": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\product-details.html",

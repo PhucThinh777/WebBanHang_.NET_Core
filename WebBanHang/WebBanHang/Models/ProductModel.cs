@@ -17,15 +17,17 @@ namespace WebBanHang.Models
 
         [Required(ErrorMessage = "Yêu cầu nhập giá sản phẩm")]
         [Range(0.01, double.MaxValue, ErrorMessage = "Giá phải lớn hơn 0")]
-        [Column(TypeName = "decimal(8, 2)")]
+        //[Column(TypeName = "decimal(8, 2)")]
         public decimal Price { get; set; }
 
 		public string Image { get; set; }
 
 		[Required, Range(1,int.MaxValue, ErrorMessage ="Chọn 1 thương hiệu")]
 		public long BrandId { get; set; }
-        
-		[Required, Range(1, int.MaxValue, ErrorMessage = "Chọn 1 danh mục")]
+        public int Quantity { get; set; }
+        public int Sold { get; set; }
+
+        [Required, Range(1, int.MaxValue, ErrorMessage = "Chọn 1 danh mục")]
         public long CategoryId { get; set; }
 		public BrandModel Brand { get; set; }
 		public CategoryModel Category { get; set; }

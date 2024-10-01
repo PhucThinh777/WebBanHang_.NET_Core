@@ -81,6 +81,7 @@ namespace WebBanHang.Areas.Admin.Controllers
                     existed_contact.Description = contact.Description;
                     existed_contact.Map = contact.Map;
                     existed_contact.Phone = contact.Phone;
+                    existed_contact.Gmail = contact.Gmail;
 
                     // Lưu đối tượng vào cơ sở dữ liệu
                     _dataContext.Update(existed_contact);

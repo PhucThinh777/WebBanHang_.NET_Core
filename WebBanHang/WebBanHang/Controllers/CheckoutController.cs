@@ -7,6 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using WebBanHang.Areas.Admin.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebBanHang.Controllers
 {
@@ -50,21 +51,23 @@ namespace WebBanHang.Controllers
 
             foreach (var cart in cartItems)
             {
-                var orderdetails = new OrderDetails
-                {
-                    UserName = userEmail,
-                    OrderCode = ordercode,
-                    ProductId = cart.ProductId,
-                    Price = cart.Price,
-                    Quantity = cart.Quantity
-                };
+                var orderdetails = new OrderDetails();
 
+                orderdetails.UserName = userEmail;
+                orderdetails.OrderCode = ordercode;
+                orderdetails.ProductId = cart.ProductId;
+                orderdetails.Price = cart.Price;
+                orderdetails.Quantity = cart.Quantity;
+
+                //update product quantity
+                var product = await _dataContext.Products.Where(p => p.Id == cart.ProductId).FirstAsync();
+                product.Quantity -= cart.Quantity;
+                product.Sold += cart.Quantity;
+                _dataContext.Update(product);
                 _dataContext.Add(orderdetails);
+                _dataContext.SaveChanges();
             }
-
-            await _dataContext.SaveChangesAsync();
             HttpContext.Session.Remove("Cart");
-
             // Gửi Email xác nhận đơn hàng
             var receiver = userEmail;
             var subject = "Đặt hàng thành công";

@@ -5,6 +5,11 @@ using WebBanHang.Areas.Admin.Repository;
 using WebBanHang.Models;
 using WebBanHang.Models.ViewModels;
 using WebBanHang.Repository;
+using System;
+using System.Net.Http;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebBanHang.Controllers
 {
@@ -21,6 +26,38 @@ namespace WebBanHang.Controllers
             _emailSender = emailSender;
         }
 
+        #region Change Rate
+        public async Task<decimal> GetExchangeRateAsync(string fromCurrency, string toCurrency)
+        {
+            string url = $"https://www.google.com/finance/quote/{fromCurrency}-{toCurrency}";
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+
+                    // Tìm chuỗi tỷ giá trong thẻ div
+                    int startIndex = responseBody.IndexOf("<div class=\"YMlKec fxKbKc\">") + "<div class=\"YMlKec fxKbKc\">".Length;
+                    int endIndex = responseBody.IndexOf("</div>", startIndex);
+                    if (startIndex >= 0 && endIndex > startIndex)
+                    {
+                        string rateString = responseBody.Substring(startIndex, endIndex - startIndex);
+                        rateString = rateString.Replace(".", "").Replace(",", "."); // Chuyển đổi định dạng
+
+                        if (decimal.TryParse(rateString, out decimal rate))
+                        {
+                            return rate;
+                        }
+                    }
+                }
+            }
+            throw new Exception("Không thể lấy tỷ giá từ Google Finance");
+        }
+
+        #endregion
+
+        #region Index Page
         public IActionResult Index()
         {
             List<CartItemModel> cartItems = HttpContext.Session.GetJson<List<CartItemModel>>("Cart") ?? new List<CartItemModel>();
@@ -56,7 +93,9 @@ namespace WebBanHang.Controllers
             ViewBag.PaypalClientdId = _paypalClient.ClientId;
             return View(cartVM);
         }
+        #endregion
 
+        #region Function
         public async Task<IActionResult> Add(long Id)
         {
             ProductModel product = await _dataContext.Products.FindAsync(Id);
@@ -100,16 +139,18 @@ namespace WebBanHang.Controllers
 
         public async Task<IActionResult> Increase(int Id)
         {
+            ProductModel product = await _dataContext.Products.Where(p => p.Id == Id).FirstOrDefaultAsync();
             List<CartItemModel> cart = HttpContext.Session.GetJson<List<CartItemModel>>("Cart");
             CartItemModel cartItem = cart.Where(c => c.ProductId == Id).FirstOrDefault();
-            if (cartItem.Quantity >= 1)
+            if (cartItem.Quantity >= 1 && product.Quantity > cartItem.Quantity)
             {
                 ++cartItem.Quantity;
 
             }
             else
             {
-                cart.RemoveAll(p => p.ProductId == Id);
+                cartItem.Quantity = product.Quantity;
+                TempData["success"] = "Sản phẩm đã đạt mức tối đa";
             }
 
             if (cart.Count == 0)
@@ -140,6 +181,9 @@ namespace WebBanHang.Controllers
             TempData["success"] = "Đã xoá toàn bộ giỏ hàng";
             return RedirectToAction("Index");
         }
+        #endregion
+
+        #region Checkout
 
         [HttpPost]
         public async Task<IActionResult> Checkout(string fullName, string phone, string address, long paymentId)
@@ -169,23 +213,26 @@ namespace WebBanHang.Controllers
 
             foreach (var cart in cartItems)
             {
-                var orderdetails = new OrderDetails
-                {
-                    UserName = userEmail,
-                    OrderCode = ordercode,
-                    ProductId = cart.ProductId,
-                    Price = cart.Price,
-                    Quantity = cart.Quantity,
-                    FullName = fullName,
-                    Phone = phone,
-                    Address = address,
-                    PaymentId = paymentId
-                };
+                var orderdetails = new OrderDetails();
 
+                orderdetails.UserName = userEmail;
+                orderdetails.OrderCode = ordercode;
+                orderdetails.ProductId = cart.ProductId;
+                orderdetails.Price = cart.Price;
+                orderdetails.Quantity = cart.Quantity;
+                orderdetails.FullName = fullName;
+                orderdetails.Phone = phone;
+                orderdetails.Address = address;
+                orderdetails.PaymentId = paymentId;
+
+                //update product quantity
+                var product = await _dataContext.Products.Where(p => p.Id == cart.ProductId).FirstAsync();
+                product.Quantity -= cart.Quantity;
+                product.Sold += cart.Quantity;
+                _dataContext.Update(product);
                 _dataContext.Add(orderdetails);
+                _dataContext.SaveChanges();
             }
-
-            await _dataContext.SaveChangesAsync();
             HttpContext.Session.Remove("Cart");
 
             // Gửi Email xác nhận đơn hàng
@@ -206,9 +253,9 @@ namespace WebBanHang.Controllers
 
             return RedirectToAction("CheckoutSuccess");
         }
+        #endregion
 
-
-        #region Paypal payment
+        #region Paypal Payment
 
         [Authorize]
         [HttpPost("/Cart/create-paypal-order")]
@@ -221,12 +268,17 @@ namespace WebBanHang.Controllers
                 return BadRequest(new { message = "The cart is empty." });
             }
 
-            var totalAmount = cartItems.Sum(p => p.Quantity * p.Price).ToString("F2");
-            var currency = "USD";
-            var referenceOrderId = "Order" + DateTime.Now.Ticks;
-
             try
             {
+                // Lấy tỷ giá hối đoái USD/VND từ Google Finance
+                decimal exchangeRate = await GetExchangeRateAsync("USD", "VND");
+
+                // Tính tổng số tiền USD từ VND sử dụng tỷ giá
+                var totalAmount = cartItems.Sum(p => (p.Quantity * p.Price) / exchangeRate).ToString("F2");
+                var currency = "USD";
+                var referenceOrderId = "Order" + DateTime.Now.Ticks;
+
+                // Tạo đơn hàng trên PayPal
                 var response = await _paypalClient.CreateOrder(totalAmount, currency, referenceOrderId);
                 return Ok(response);
             }
@@ -235,6 +287,7 @@ namespace WebBanHang.Controllers
                 return BadRequest(new { message = ex.GetBaseException().Message });
             }
         }
+
 
         [Authorize]
         [HttpPost("/Cart/capture-paypal-order")]
@@ -265,23 +318,28 @@ namespace WebBanHang.Controllers
 
                 foreach (var cart in cartItems)
                 {
-                    var orderDetails = new OrderDetails
-                    {
-                        UserName = userEmail,
-                        OrderCode = ordercode,
-                        ProductId = cart.ProductId,
-                        Price = cart.Price,
-                        Quantity = cart.Quantity,
-                        FullName = model.FullName,
-                        Phone = model.Phone,
-                        Address = model.Address,
-                        PaymentId = 2
-                    };
+                    var orderDetails = new OrderDetails();
 
+
+                    orderDetails.UserName = userEmail;
+                    orderDetails.OrderCode = ordercode;
+                    orderDetails.ProductId = cart.ProductId;
+                    orderDetails.Price = cart.Price;
+                    orderDetails.Quantity = cart.Quantity;
+                    orderDetails.FullName = model.FullName;
+                    orderDetails.Phone = model.Phone;
+                    orderDetails.Address = model.Address;
+                    orderDetails.PaymentId = 2;
+
+
+                    //update product quantity
+                    var product = await _dataContext.Products.Where(p => p.Id == cart.ProductId).FirstAsync();
+                    product.Quantity -= cart.Quantity;
+                    product.Sold += cart.Quantity;
+                    _dataContext.Update(product);
                     _dataContext.Add(orderDetails);
+                    _dataContext.SaveChanges();
                 }
-
-                await _dataContext.SaveChangesAsync();
                 HttpContext.Session.Remove("Cart");
 
                 // Gửi email

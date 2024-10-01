@@ -28,10 +28,20 @@
                         <span>@Model.ProductDetails.Price.ToString("#,##0 VNĐ")</span>
                         <label>Quantity:</label>
                         <input type="text" value="1" />
-                        <button type="button" class="btn btn-default cart">
-                            <i class="fa fa-shopping-cart"></i>
-                            Add to cart
-                        </button>
+                        @if(Model.ProductDetails.Quantity > 0)
+                        {
+                            <button type="button" class="btn btn-default cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                Thêm giỏ hàng
+                            </button>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-default cart" style="color: red" disabled>
+                                <i class="fa fa-shopping-cart"></i>
+                                Hết hàng
+                            </button>
+                        }
                     </span>
                     <p><b>Danh mục:</b> @Model.ProductDetails.Category.Name</p>
                     <p><b>Thương hiệu:</b> @Model.ProductDetails.Brand?.Name</p>
@@ -73,7 +83,7 @@
                             }
                             else
                             {
-                            <h3>Đăng nhập tài khoản để comment</h3>
+                                <h3>Đăng nhập tài khoản để comment</h3>
                                 <a asp-action="Login" asp-controller="Account">Đăng nhập ngay</a>
                             }
                         </form>

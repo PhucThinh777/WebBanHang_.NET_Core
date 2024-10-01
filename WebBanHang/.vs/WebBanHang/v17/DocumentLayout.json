@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\repository\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\repository\\emailsender.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\models\\orderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\models\\orderdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\repository\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\repository\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|c:\\users\\phuct\\onedrive\\desktop\\webbanhang\\webbanhang\\webbanhang\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{33A9497B-74B3-4A64-AD93-452BAC227CBB}|WebBanHang\\WebBanHang.csproj|solutionrelative:webbanhang\\areas\\admin\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 71,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,28 +42,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EmailSender.cs",
-              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Repository\\EmailSender.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAoAAAA",
+              "DocumentIndex": 2,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Repository\\DataContext.cs",
+              "RelativeDocumentMoniker": "WebBanHang\\Repository\\DataContext.cs",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Repository\\DataContext.cs",
+              "RelativeToolTip": "WebBanHang\\Repository\\DataContext.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAADwvxoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-18T17:41:57.989Z",
+              "WhenOpened": "2024-10-01T06:31:32.913Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\appsettings.json",
-              "RelativeDocumentMoniker": "WebBanHang\\appsettings.json",
-              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\appsettings.json",
-              "RelativeToolTip": "WebBanHang\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-18T17:40:10.954Z",
+              "Title": "OrderDetails.cs",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Models\\OrderDetails.cs",
+              "RelativeDocumentMoniker": "WebBanHang\\Models\\OrderDetails.cs",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Models\\OrderDetails.cs",
+              "RelativeToolTip": "WebBanHang\\Models\\OrderDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:30:30.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "WebBanHang\\Models\\OrderModel.cs",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Models\\OrderModel.cs",
+              "RelativeToolTip": "WebBanHang\\Models\\OrderModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T06:29:26.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Views\\Order\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACgAAACSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T06:27:34.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "WebBanHang\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "WebBanHang\\Areas\\Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAUwBEAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T05:52:07.547Z",
               "EditorCaption": ""
             }
           ]

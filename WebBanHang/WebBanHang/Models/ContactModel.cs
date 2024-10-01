@@ -18,6 +18,8 @@ namespace WebBanHang.Models
         public string Logo { get; set; }
         [Required(ErrorMessage = "Yêu cầu nhập số điện thoại")]
         public string Phone { get; set; }
+        public string Gmail { get; set; }
+
         [NotMapped]
         [FileExtension("jpg", "jpeg", "png", ErrorMessage = "Chỉ chấp nhận các định dạng: jpg, jpeg, png")]
         public IFormFile? ImageUpload { get; set; }

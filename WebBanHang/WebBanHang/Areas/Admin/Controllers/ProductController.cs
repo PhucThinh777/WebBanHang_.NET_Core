@@ -20,7 +20,7 @@ namespace WebBanHang.Areas.Admin.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public async Task<IActionResult> Index(int pg =1)
+        public async Task<IActionResult> Index(int pg = 1)
         {
             return View(await _dataContext.Products.OrderByDescending(p => p.Id).Include(p => p.Category).Include(p => p.Brand).ToListAsync());
 
@@ -207,7 +207,7 @@ namespace WebBanHang.Areas.Admin.Controllers
         {
             ProductModel product = await _dataContext.Products.FindAsync(Id);
 
-            if(!string.Equals(product.Image, "noname.jpg"))
+            if (!string.Equals(product.Image, "noname.jpg"))
             {
                 string uploadsDir = Path.Combine(_webHostEnvironment.WebRootPath, "media/products");
                 string oldfileImage = Path.Combine(uploadsDir, product.Image);
@@ -218,16 +218,46 @@ namespace WebBanHang.Areas.Admin.Controllers
                         System.IO.File.Delete(oldfileImage);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     ModelState.AddModelError("", "An error occurred while deleting the product image.");
                 }
-               
+
             }
             _dataContext.Products.Remove(product);
             await _dataContext.SaveChangesAsync();
             TempData["error"] = "Sản phẩm đã xoá";
             return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> AddQuantity(long Id)
+        {
+            var productbyquantity = await _dataContext.ProductQuantities.Where(pq => pq.ProductId == Id).ToListAsync();
+            ViewBag.ProductByQuantity = productbyquantity;
+            ViewBag.Id = Id;
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult StoreProductQuantity(ProductQuantityModel productQuantityModel)
+        {
+            var product = _dataContext.Products.Find(productQuantityModel.ProductId);
+
+            if(product == null)
+            {
+                return NotFound();
+            }
+            product.Quantity += productQuantityModel.Quantity;
+
+            productQuantityModel.Quantity = productQuantityModel.Quantity;
+            productQuantityModel.ProductId = productQuantityModel.ProductId;
+            productQuantityModel.DateCreated = DateTime.Now;
+
+            _dataContext.Add(productQuantityModel);
+            _dataContext.SaveChangesAsync();
+            TempData["success"] = "Thêm số lượng sản phẩm thành công";
+            return RedirectToAction("AddQuantity", "Product", new { Id = productQuantityModel.ProductId });
         }
     }
 }

@@ -405,6 +405,10 @@
       "PackagePath": "staticwebassets\\media\\products\\35d22868-41ea-4117-88c6-0d3e389e4630.png"
     },
     {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\37a9c11d-17c4-455b-bfd5-6e117773516c.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\37a9c11d-17c4-455b-bfd5-6e117773516c.jpg"
+    },
+    {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\51b6a856-ecbf-4487-8607-7c7f437139ad.jpg",
       "PackagePath": "staticwebassets\\media\\products\\51b6a856-ecbf-4487-8607-7c7f437139ad.jpg"
     },
@@ -429,16 +433,16 @@
       "PackagePath": "staticwebassets\\media\\products\\a52b7cb8-185b-4ac2-9567-493be1b6f342.jpg"
     },
     {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\b87a20f0-9e0d-4cab-ba85-66771e69dae9.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\b87a20f0-9e0d-4cab-ba85-66771e69dae9.jpg"
+    },
+    {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\bb20653e-2fa3-4c9d-bdda-19de7c8a38d7.jpg",
       "PackagePath": "staticwebassets\\media\\products\\bb20653e-2fa3-4c9d-bdda-19de7c8a38d7.jpg"
     },
     {
-      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg",
-      "PackagePath": "staticwebassets\\media\\products\\e4c1aa84-c8c2-4dd6-81aa-bd2d4a34fcd6.jpg"
-    },
-    {
-      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg",
-      "PackagePath": "staticwebassets\\media\\products\\eb1b072f-d417-4e03-9036-00f97ee94080.jpg"
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\ec79ac5e-a184-453b-9816-d1a6d2bddfa5.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\ec79ac5e-a184-453b-9816-d1a6d2bddfa5.jpg"
     },
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\fe13054f-3cc9-4154-9dfd-434c7f988b5d.jpg",
@@ -447,6 +451,10 @@
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\notfound.png",
       "PackagePath": "staticwebassets\\media\\products\\notfound.png"
+    },
+    {
+      "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\media\\products\\text.jpg",
+      "PackagePath": "staticwebassets\\media\\products\\text.jpg"
     },
     {
       "Id": "C:\\Users\\phuct\\OneDrive\\Desktop\\WebBanHang\\WebBanHang\\WebBanHang\\wwwroot\\product-details.html",

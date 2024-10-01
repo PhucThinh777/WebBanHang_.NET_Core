@@ -36,8 +36,18 @@
                     <div class="col-sm-6">
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
-                                <li><a href="#"><i class="fa fa-phone"></i> (+84) 12345678</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> ptshop@gmail.com</a></li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-phone"></i>
+                                        @(ViewBag.Contacts != null && ViewBag.Contacts.Count > 0 ? ViewBag.Contacts[0].Phone : "(+84) 12345678")
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-envelope"></i>
+                                        @(ViewBag.Contacts != null && ViewBag.Contacts.Count > 0 ? ViewBag.Contacts[0].Gmail : "ptshop@gmail.com")
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -97,14 +107,12 @@
                         <div class="mainmenu pull-left">
                             <ul class="nav navbar-nav collapse navbar-collapse">
                                 <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
-                                @* <li class="dropdown">
-                                <a href="#">Blog<i class="fa fa-angle-down"></i></a>
-                                <ul role="menu" class="sub-menu">
-                                <li><a href="blog.html">Blog List</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                                </li> *@
                                 <li><a asp-action="Index" asp-controller="Cart">Cart</a></li>
+                                @if (User.Identity?.IsAuthenticated ?? false)
+                                {
+                                    <li><a asp-action="Compare" asp-controller="Home">Compare</a></li>
+                                    <li><a asp-action="Wishlist" asp-controller="Home">Whishlist</a></li>
+                                }
                                 <li><a asp-action="Contact" asp-controller="Home">Contact</a></li>
                             </ul>
                         </div>

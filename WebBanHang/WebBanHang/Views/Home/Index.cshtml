@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<ProductModel>
 
-<partial name="_SliderPartial"/>
+<partial name="_SliderPartial" />
 <div class="col-sm-3">
     @Html.Partial("_Sidebar")
 </div>
@@ -22,9 +22,24 @@
                                 <p>Danh mục: @item.Category.Name</p>
                                 <p>Thương hiệu: @item.Brand.Name</p>
                             </a>
-@*                             <a asp-action="Add" asp-controller="Cart" asp-route-Id="@item.Id" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> *@
-                            <button data-product_id="@item.Id" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>
+                            @if(item.Quantity > 0)
+                            {
+                                <button data-product_id="@item.Id" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-default add-to-cart" disabled style="color: red"><i class="fa fa-shopping-cart"></i>Hết hàng</button>
+                            }
                         </div>
+                        @if (User.Identity?.IsAuthenticated ?? false)
+                        {
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><button class="btn btn-danger add-btn-wishlist" data-product_id="@item.Id"><i class="fa fa fa-heart" aria-hidden="true"></i> Yêu thích</button></li>
+                                    <li><button class="btn btn-warning add-btn-compare" data-product_id="@item.Id"><i class="fa fa-plus-square"></i> So sánh</button></li>
+                                </ul>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
@@ -33,6 +48,7 @@
     </div><!--features_items-->
 </div>
 @section Scripts {
+    <!--Add to Cart-->
     <script>
         $(document).ready(function () {
             $('.add-to-cart').click(function () {
@@ -51,4 +67,47 @@
             });
         });
     </script>
-    }
+    <!--End Add to Cart-->
+
+    <!--Add to WishList-->
+    <script>
+        $(document).ready(function () {
+            $('.add-btn-wishlist').click(function () {
+                var Id = $(this).data("product_id");
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("AddWishList", "Home")",
+                    data: { Id: Id },
+                    success: function (result) {
+                        if (result) {
+                            Swal.fire("Sản phẩm đã được thêm vào mục yêu thích");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <!--End Add to WishList-->
+
+    <!--Add to Compare-->
+    <script>
+        $(document).ready(function () {
+            $('.add-btn-compare').click(function () {
+                var Id = $(this).data("product_id");
+
+                $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("AddCompare", "Home")",
+                    data: { Id: Id },
+                    success: function (result) {
+                        if (result) {
+                            Swal.fire("Sản phẩm đã được thêm vào mục so sánh");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <!--End Add to Compare-->
+}
